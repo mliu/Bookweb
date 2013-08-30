@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="pure-g-r" id="menu">
+  <div class="pure-u">
+    <%= render 'layouts/sidebar' %>
+  </div>
+</div>
+<div class="pure-u-1" id="main">
+  <%= yield %>
+</div>
 
 </body>
 </html>
