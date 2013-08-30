@@ -10,10 +10,14 @@ gem 'pg'
 gem 'sqlite3'
 
 # Use Devise for user authentication, sign in, etc.
-
 gem 'devise'
 
-# Use SCSS for stylesheets
+gem 'haml'
+
+# Pure
+gem 'purecss'
+
+# Bootstrap SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
