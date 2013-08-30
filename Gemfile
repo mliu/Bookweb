@@ -15,7 +15,7 @@ gem 'devise'
 gem 'haml'
 
 # Pure
-gem 'purecss'
+gem 'purecss-rails'
 
 # Bootstrap SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
