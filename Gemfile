@@ -6,7 +6,12 @@ gem 'rails', '4.0.0'
 # Use pg as the database for Active Record
 gem 'pg'
 
+# Use sqlite3 as the database for Active Record [Only for testing.. Will switch later]
 gem 'sqlite3'
+
+# Use Devise for user authentication, sign in, etc.
+
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -24,7 +29,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+#gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
