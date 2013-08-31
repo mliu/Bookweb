@@ -3,8 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use pg as the database for Active Record
-gem 'pg'
+group :production, :staging do
+  # Use pg as the database for Active Record
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 group :development do
   # Use sqlite3 as the database for Active Record [Only for testing.. Will switch later]
