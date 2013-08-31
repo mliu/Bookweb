@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<div class="pure-g-r" id="menu">
-  <div class="pure-u">
+<div class="pure-g-r" id="main-pad">
+  <div class="pure-u" id="menu">
     <%= render 'layouts/sidebar' %>
   </div>
-</div>
-<div class="pure-u-1" id="main">
-  <%= yield %>
+  <div class="pure-u-1" id="main">
+    <%= yield %>
+  </div>
 </div>
 
 </body>

@@ -1,0 +1,113 @@
+/*
+  =require purecss/base
+  =require purecss/buttons
+  =require purecss/forms
+  =require purecss/grids
+  =require purecss/menus
+  =require purecss/tables
+*/
+/***********************ARVO**************************/
+@font-face{
+  font-family:'Arvo-Regular';
+  src:font-url('Arvo-Regular.ttf');
+  src:font-url('Arvo-Regular.ttf?iefix') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+
+html *{
+  font-family:'Arvo-Regular';
+}
+
+/***********************SEARCH**************************/
+#searchabsolute{
+  padding-left:250px;
+  height:100px;
+  margin:auto;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+/***********************BASIC SHIT**************************/
+.center{
+  text-align:center;
+}
+
+.h3{
+  font-size:4em;
+}
+
+.gray{
+  color:gray;
+}
+
+/***********************SIDEBAR**************************/
+#menu{
+  margin-left:-250px;
+  width:250px;
+  position:fixed;
+  left:250px;
+  top:0;
+  bottom:0;
+  overflow:hidden;
+  z-index:1000;
+  vertical-align:top;
+  background:#3C5B6F;
+}
+
+#whiteline{
+  border-top:10px solid white;
+}
+
+#grayline{
+  border-top:5px solid gray;
+}
+
+#menu-inner{
+  background:transparent;
+  border:0;
+}
+
+#main-pad{
+  padding-left:250px;
+  left:0;
+}
+
+#main{
+  width:100%;
+}
+
+#menu-bottom{
+  margin-top:200px;
+}
+
+#menu-image{
+  position:fixed;
+}
+
+#menu-logo{
+  margin-top:30px;
+}
+#menu-inner-margin{
+  margin-left:10px;
+}
+
+#menu-heading1{
+  margin-top:40px;
+  font-size:270%;
+  font-weight:bolder;
+  color:#FFFFFF;
+}
+
+#menu-heading2{
+  margin-top:0px;
+  font-size:100%;
+  color:#C2C1BA;
+}
+
+.button-color{
+  color:#3C5B6F;
+}

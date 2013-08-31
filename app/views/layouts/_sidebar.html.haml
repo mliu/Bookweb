@@ -1,1 +1,16 @@
-.pure-menu-heading
+%img#menu-image#menu-logo{src: "assets/menu_logo.png", alt: "Bookweb"}
+#menu-inner-margin
+  #menu-heading2
+    The Ultimate College Textbook/Networking Site
+%br
+#whiteline
+#grayline
+%img#menu-image{src: "assets/books.png", alt: "Hello!"}
+.pure-menu.pure-menu-open#menu-bottom.button-color
+  %ul
+    %li
+      =link_to 'Home', root_path
+    %li
+      =link_to 'About', about_path
+    %li
+      =link_to 'Find Textbooks', search_path
