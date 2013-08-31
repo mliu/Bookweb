@@ -80,5 +80,5 @@ Hbook::Application.configure do
 
   #Use Arvo
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
-  config.assets.precompile += %w( .ttf )
+  config.assets.precompile += %w( .ttf purecss.css.scss )
 end
