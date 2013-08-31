@@ -6,8 +6,10 @@ gem 'rails', '4.0.0'
 # Use pg as the database for Active Record
 gem 'pg'
 
-# Use sqlite3 as the database for Active Record [Only for testing.. Will switch later]
-gem 'sqlite3'
+group :development do
+  # Use sqlite3 as the database for Active Record [Only for testing.. Will switch later]
+  gem 'sqlite3'
+end
 
 # Use Devise for user authentication, sign in, etc.
 gem 'devise'
