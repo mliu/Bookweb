@@ -31,13 +31,50 @@ html *{
   right:0;
 }
 
+.findbutton{
+  display:inline-block;
+  margin-left:10px;
+  vertical-align:top;
+  height:76px;
+}
+
+.searchline{
+  vertical-align:middle;
+  display:inline-block;
+}
+
+.labelcolor{
+    color:#595B5D;
+}
+
+.searchbox{
+  height:70px;
+  border-radius:10px;
+  text-align:center;
+  font-size:3em;
+}
+
+.labelright{
+  margin-left:76px;
+  margin-right:76px;
+}
+
+.labelleft{
+  margin-right:220px;
+  margin-left:91px;
+}
 /***********************BASIC SHIT**************************/
 .center{
   text-align:center;
+  margin-top:10px;
 }
 
 .h3{
   font-size:4em;
+}
+
+.searchtext{
+  font-size:1.30em;
 }
 
 .gray{
