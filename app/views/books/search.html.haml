@@ -4,12 +4,12 @@
   .gray
     With Bookweb, it's easy to find the textbooks you need. Simply enter your class department and course # to see what people are selling!
   #searchabsolute
-    =form_tag books_path do
+    =form_tag books_path, method: 'get' do
       .searchline
         =label_tag :department, "Department", class: "labelcolor labelright searchtext"
         =label_tag :course_num, "Course #", class: "labelcolor labelleft searchtext"
         %br
         =text_field_tag :department, params[:department], size:10, placeholder: "(e.g. ENGE)", maxlength:4, class: "searchbox"
-        =text_field_tag :department, params[:course_num], size:10, placeholder: "(e.g. 1024)", maxlength:4, class: "searchbox"
+        =text_field_tag :course_num, params[:course_num], size:10, placeholder: "(e.g. 1024)", maxlength:4, class: "searchbox"
         .findbutton
           =image_submit_tag("search.png")

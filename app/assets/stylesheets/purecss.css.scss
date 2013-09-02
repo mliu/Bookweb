@@ -6,6 +6,36 @@
   =require purecss/menus
   =require purecss/tables
 */
+
+/***********************INDEX*************************/
+.bookcenter{
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+  height:400px;
+}
+
+.bookheader{
+  margin-top:10px;
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+  height:50px;
+  border-bottom:1px solid gray;
+}
+
+.bookheaderleft{
+  display:inline-block;
+  float:left;
+  color:gray;
+}
+
+.bookheaderright{
+  display:inline-block;
+  float:right;
+  color:gray;
+}
+
 /***********************ARVO**************************/
 @font-face{
   font-family:'Arvo-Regular';
