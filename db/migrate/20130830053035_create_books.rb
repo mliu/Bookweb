@@ -3,8 +3,7 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.integer :user_id
       t.integer :college_id
-      t.integer :department
-      t.integer :course_num
+      t.integer :course_id
       t.string :title
       t.string :author
       t.string :isbn
