@@ -1,11 +1,11 @@
-%img#menu-image#menu-logo{src: "assets/menu_logo.png"}
+%img#menu-image#menu-logo{src: "#{image_path('menu_logo.png')}"}
 #menu-inner-margin
   #menu-heading2
     The Ultimate College Textbook/Networking Site
 %br
 #whiteline
 #grayline
-%img#menu-image{src: "assets/books.png"}
+%img#menu-image{src: "#{image_path('books.png')}"}
 .pure-menu.pure-menu-open#menu-bottom.button-color
   %ul
     %li
@@ -14,3 +14,5 @@
       =link_to 'About', about_path
     %li
       =link_to 'Find Textbooks', search_path
+    %li
+      =link_to 'List your Textbooks', new_book_path

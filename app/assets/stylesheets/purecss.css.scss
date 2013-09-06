@@ -8,6 +8,13 @@
 */
 
 /***********************INDEX*************************/
+.bookcontent{
+  margin:auto;
+  width:95%;
+  height:290px;
+  padding-top:10px;
+}
+
 .bookunit{
   margin-left:auto;
   margin-right:auto;
@@ -16,6 +23,37 @@
   background-color:#EDEADA;
   margin-top:20px;
   border-radius:10px;
+}
+
+.bookbutton{
+  margin-top:240px;
+  height:30px;
+}
+
+.bookunitleft{
+  width:25%;
+  float:left;
+  height:290px;
+}
+
+.bookunitrightholder{
+  width:75%;
+  height:290px;
+  margin:auto;
+  float:right;
+}
+
+.bookunitright{
+  width:50%;
+  float:right;
+  height:260px;
+}
+
+.bookunitcenter{
+  width:50%;
+  height:290px;
+  float:left;
+  /*background-color:#DBD8BC;*/
 }
 
 .bookheader{
@@ -52,6 +90,15 @@ html *{
   font-family:'Arvo-Regular';
 }
 
+/***********************LIST************************/
+.listabsolute{
+  padding-left:250px;
+  margin:auto;
+  position:absolute;
+}
+
+
+
 /***********************SEARCH**************************/
 #searchabsolute{
   padding-left:250px;
@@ -69,6 +116,15 @@ html *{
   margin-left:10px;
   vertical-align:top;
   height:76px;
+  -moz-transition: opacity .2s linear;
+  -webkit-transition: opacity .2s linear;
+  -ms-transition: opacity .2s linear;
+  -o-transition: opacity .2 linear;
+  transition: opacity .2s linear;
+}
+
+.findbutton:hover{
+  opacity:.8;
 }
 
 .searchline{

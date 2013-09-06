@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :school_id
       t.integer :year
       t.string :major
+      t.string :contact
 
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
