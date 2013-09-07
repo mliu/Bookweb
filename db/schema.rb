@@ -15,16 +15,18 @@ ActiveRecord::Schema.define(version: 20130902023737) do
 
   create_table "books", force: true do |t|
     t.integer  "user_id"
-    t.integer  "college_id"
+    t.integer  "school_id"
     t.string   "department"
     t.integer  "course_num"
     t.string   "title"
-    t.string   "author"
     t.string   "isbn"
+    t.string   "author"
     t.string   "condition"
     t.decimal  "listing_price"
     t.decimal  "asking_price"
-    t.string   "details"
+    t.string   "trade",         default: ""
+    t.string   "details",       default: ""
+    t.datetime "expiration",    default: '2013-09-28 03:59:59'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,11 +40,19 @@ ActiveRecord::Schema.define(version: 20130902023737) do
 
   create_table "schools", force: true do |t|
     t.integer  "transaction_count"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "school_id"
+    t.integer  "year"
+    t.string   "major"
+    t.string   "contact"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

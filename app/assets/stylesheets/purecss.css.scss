@@ -92,12 +92,42 @@ html *{
 
 /***********************LIST************************/
 .listabsolute{
-  padding-left:250px;
+  margin-left:25%;
+  width:50%;
   margin:auto;
   position:absolute;
 }
 
+.listalign{
+  margin-top:10px;
+  width:140px;
+  float:left;
+  text-align:right;
+  margin-right:3%;
+  display:block;
+}
 
+.listbox{
+  height:40px;
+  border-radius:5px;
+  font-size:1.5em;
+}
+
+.listspace{
+  margin-top:10px;
+}
+
+.listbutton{
+  -moz-transition: opacity .2s linear;
+  -webkit-transition: opacity .2s linear;
+  -ms-transition: opacity .2s linear;
+  -o-transition: opacity .2 linear;
+  transition: opacity .2s linear;
+}
+
+.listbutton:hover{
+  opacity:.8;
+}
 
 /***********************SEARCH**************************/
 #searchabsolute{

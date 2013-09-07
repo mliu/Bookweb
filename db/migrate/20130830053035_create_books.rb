@@ -2,7 +2,7 @@ class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
       t.integer :user_id
-      t.integer :college_id
+      t.integer :school_id
       t.string :department
       t.integer :course_num
       t.string :title
@@ -11,9 +11,9 @@ class CreateBooks < ActiveRecord::Migration
       t.string :condition
       t.decimal :listing_price
       t.decimal :asking_price
-      t.string :trade
-      t.string :details
-      t.datetime :expiration, default: Time.at_midnight(Time.now + 1814400)
+      t.string :trade, default: ""
+      t.string :details, default: ""
+      t.datetime :expiration, default: (Time.now + 1814400).end_of_day
 
       t.timestamps
     end
