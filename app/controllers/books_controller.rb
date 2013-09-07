@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  def about
+  end
+  
   def search
   end
 
@@ -12,6 +15,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       flash[:book_create] = "You have listed your textbook!"
+      @book.user_id = current_user.id
       redirect_to root_path
     else
       render 'new'

@@ -2,34 +2,42 @@
   .h3
     Sell/Trade your Textbooks
 .listabsolute{style: "padding-left:20%;"}
+  -if @book.errors.any?
+    .center
+      %p Your entry had some errors!
+      -@book.errors.each do |name, msg|
+        =name.to_s.humanize
+        =msg
+        %br
+  %br
   =form_for @book do |b|
     %form{class: ""}
       %div{class: "listspace"}
-        =b.label :department, "Department *", class: "listalign"
+        =b.label :department, "Department *", class: field_class(@book, :department)
         =b.text_field :department, size: 50, maxlength: 4, type: "text", placeholder: "(e.g. ACIS)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :course_num, "Course # *", class: "listalign"
+        =b.label :course_num, "Course # *", class: field_class(@book, :course_num)
         =b.text_field :course_num, size: 50, maxlength: 4, type: "text", placeholder: "(e.g. 1504)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :title, "Title *", class: "listalign"
+        =b.label :title, "Title *", class: field_class(@book, :title)
         =b.text_field :title, size: 50, maxlength: 50, type: "text", placeholder: "(e.g. Introduction to Business)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :author, "Author *", class: "listalign"
+        =b.label :author, "Author *", class: field_class(@book, :author)
         =b.text_field :author, size: 50, maxlength: 20, type: "text", placeholder: "(e.g. John Smith)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :isbn, "ISBN # *", class: "listalign"
+        =b.label :isbn, "ISBN # *", class: field_class(@book, :isbn)
         =b.text_field :isbn, size: 50, maxlength: 17, type: "text", placeholder: "(e.g. 123-4-56-789012-3)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :condition, "Condition *", class: "listalign"
+        =b.label :condition, "Condition *", class: field_class(@book, :condition)
         =b.text_field :condition, size: 50, maxlength: 100, type: "text", placeholder: "(e.g. Missing page 2-8, Some bent corners)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :asking_price, "Asking price *", class: "listalign"
+        =b.label :asking_price, "Asking price *", class: field_class(@book, :asking_price)
         =b.text_field :asking_price, size: 50, maxlength: 5, type: "text", placeholder: "(e.g. 110.00)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :trade, "Trading for", class: "listalign"
+        =b.label :trade, "Trading for", class: field_class(@book, :trade)
         =b.text_field :trade, size: 50, maxlength: 100, type: "text", placeholder: "(e.g. ENGE 1234 textbook or CHEM 1111 textbook)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :details, "Contact info (Leave blank for default email)", class: "listalign"
+        =b.label :details, "Contact info (Leave blank for default email)", class: field_class(@book, :details)
         =b.text_field :details, size: 50, maxlength: 50, type: "text", placeholder: "(e.g. johnsmith@vt.edu)", class: "listbox"
       %br
       .listbutton
