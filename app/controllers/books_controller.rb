@@ -1,14 +1,14 @@
 class BooksController < ApplicationController
   def about
   end
-  
+
   def search
   end
 
   def index
     @department = params[:department]
     @course_num = params[:course_num]
-    @books = Book.search(params[:department], params[:course_num]).sort{|y,x| y.askingprice <=> x.askingprice}
+    @books = Book.search(params[:department], params[:course_num]).sort{|y,x| y.asking_price <=> x.asking_price}
   end
 
   def create
