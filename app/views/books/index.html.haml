@@ -6,7 +6,6 @@
 -if @books.count == 0
   .center{style: "margin-top:60px;"}
     %img{src:"assets/nothing.png"}
-    %div
       Sorry! Nobody is listing a textbook for that class.
       %br
       %br
@@ -32,13 +31,13 @@
           ="Listing price: " + number_with_precision(t.storeprice, precision: 2)
           ="Asking price: " + number_with_precision(t.askingprice, precision: 2)
           ="Looking to trade for: " + b.trade
-.bookunit
-  .bookcontent
-    .bookunitleft
-      test
-    .bookunitrightholder
-      .bookunitcenter
-        test
-      .bookunitright
-        test
-        .bookbutton
+/ .bookunit
+/   .bookcontent
+/     .bookunitleft
+/       test
+/     .bookunitrightholder
+/       .bookunitcenter
+/         test
+/       .bookunitright
+/         test
+/         .bookbutton

@@ -1,3 +1,6 @@
+-content_for :javascript_includes do
+  =javascript_include_tag "popup.js"
+
 .center
   .h3
     Sell/Trade your Textbooks
@@ -25,7 +28,12 @@
         =b.label :author, "Author *", class: field_class(@book, :author)
         =b.text_field :author, size: 50, maxlength: 20, type: "text", placeholder: "(e.g. John Smith)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :isbn, "ISBN # *", class: field_class(@book, :isbn)
+        %div{class: field_class(@book, :isbn), id: "hover"}
+          ISBN <b style="color:blue">(?)</b> *
+        / =b.label :isbn, "ISBN # (?) *", id: "hover", class: field_class(@book, :isbn)
+        %div{id: "popup"} 
+          Every book has a 17 character ISBN, like the one found below.
+          %img{src: "#{image_path('isbn.png')}"}
         =b.text_field :isbn, size: 50, maxlength: 17, type: "text", placeholder: "(e.g. 123-4-56-789012-3)", class: "listbox"
       %div{class: "listspace"}
         =b.label :condition, "Condition *", class: field_class(@book, :condition)
@@ -42,4 +50,3 @@
       %br
       .listbutton
         =image_submit_tag("list.png")
-

@@ -137,6 +137,18 @@ html *{
   color:black;
 }
 
+#popup{
+  height:170px;
+  width:200px;
+  text-align:center;
+  vertical-align:middle;
+  background-color:#E3E3E3;
+  display:none;
+  padding-top:5px;
+  position:absolute;
+  margin-top:40px;
+}
+
 /***********************SEARCH**************************/
 #searchabsolute{
   padding-left:250px;
