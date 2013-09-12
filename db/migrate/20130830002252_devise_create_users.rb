@@ -2,6 +2,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       ########## NON-DEVISE STUFF ##########
+      ########## User stuff
+      t.decimal :rating, default: 0
+      t.integer :rate_count, default: 0
+      t.integer :ban_status, default: 0
+      t.integer :renew_wait_time, default: 3
+      t.integer :renew_time, default: 604800
+      t.integer :book_limit, default: 4
+
       ########## Names
       t.string :username
       t.string :first_name

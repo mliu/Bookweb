@@ -13,7 +13,7 @@ class CreateBooks < ActiveRecord::Migration
       t.decimal :asking_price
       t.string :trade, default: ""
       t.string :details, default: ""
-      t.datetime :expiration, default: (Time.now + 1814400).end_of_day
+      t.datetime :expiration, default: (Time.now + 1209600).end_of_day
 
       t.timestamps
     end

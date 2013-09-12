@@ -17,5 +17,9 @@
       =link_to 'Find Textbooks', search_path
     %li
       =link_to 'List your Textbooks', new_book_path
-    %li
-      =link_to 'Login/Signup', new_user_session_path
+    -if not user_signed_in?
+      %li
+        =link_to 'Login/Signup', new_user_session_path
+    -if user_signed_in?
+      %li
+        =link_to 
