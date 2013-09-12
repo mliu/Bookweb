@@ -1,12 +1,13 @@
-%img#menu-image#menu-logo{src: "#{image_path('menu_logo.png')}"}
-#menu-inner-margin
+#menu-logo
+  %img#menu-image#menu-image{src: "#{image_path('menu_logo.png')}"}
+#menu-inner-margin#logo-image-top
   #menu-heading2
     The Ultimate College Textbook/Networking Site
 %br
 #whiteline
 #grayline
 %img#menu-image{src: "#{image_path('books.png')}"}
-.pure-menu.pure-menu-open#menu-bottom.button-color
+.pure-menu.pure-menu-open#placeholder-image-top.button-color
   %ul
     %li
       =link_to 'Home', root_path
@@ -16,3 +17,5 @@
       =link_to 'Find Textbooks', search_path
     %li
       =link_to 'List your Textbooks', new_book_path
+    %li
+      =link_to 'Login/Signup', new_user_session_path
