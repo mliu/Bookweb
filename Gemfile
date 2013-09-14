@@ -15,12 +15,14 @@ group :development do
 end
 
 # Use Devise for user authentication, sign in, etc.
-gem 'devise'
+# gem 'devise'
 
 gem 'haml'
 
 # Pure
 gem 'purecss-rails'
+
+gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 # Bootstrap SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

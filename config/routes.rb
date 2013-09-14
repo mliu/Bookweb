@@ -1,5 +1,4 @@
 Hbook::Application.routes.draw do
-  devise_for :users
   root 'info#index'
   get 'about' => 'info#about'
   resources :books

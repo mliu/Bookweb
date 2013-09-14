@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require purecss
+ *= require twitter/bootstrap
  *= require_tree .
  */

@@ -15,6 +15,7 @@
   %br
   %p{style: "padding-left:18%;"}
     ="If you list your textbook today, it will automatically expire on " + ((Time.now + 1814400).end_of_day + 1).strftime("%m-%d-%Y")
+    
   =form_for @book do |b|
     %form{class: ""}
       %div{class: "listspace"}
