@@ -45,11 +45,8 @@
         =b.label :asking_price, "Asking price *", class: "listalign " + field_class(@book, :asking_price)
         =b.text_field :asking_price, size: 50, maxlength: 6, type: "text", placeholder: "(e.g. 110.00)", class: "listbox"
       %div{class: "listspace"}
-        =b.label :trade, "Trading for", class: "listalign " + field_class(@book, :trade)
-        =b.text_field :trade, size: 50, maxlength: 100, type: "text", placeholder: "(e.g. ENGE 1234 textbook or CHEM 1111 textbook)", class: "listbox"
-      %div{class: "listspace"}
-        =b.label :contact, "Contact info (Leave blank for default email)", class: "listalign " + field_class(@book, :details)
-        =b.text_field :contact, size: 50, maxlength: 50, type: "text", placeholder: "(e.g. johnsmith@vt.edu)", class: "listbox"
+        =b.label :email, "Email", class: "listalign " + field_class(@book, :email)
+        =b.text_field :email, size: 50, maxlength: 50, type: "text", placeholder: "(e.g. johnsmith@vt.edu)", class: "listbox"
       %br
       .listbutton
         =image_submit_tag("list.png")
