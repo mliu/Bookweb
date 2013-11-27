@@ -10,14 +10,10 @@
 </head>
 <body>
 
-<div class="pure-g-r" id="main-pad">
-  <div class="pure-u" id="menu">
-    <%= render 'layouts/sidebar' %>
-  </div>
-  <div class="pure-u-1" id="main">
-    <%= yield %>
-  </div>
-</div>
+    <%= render 'layouts/header' %>
+    <div class="header-space">  
+      <%= yield %>
+    </div>
 
 </body>
 </html>

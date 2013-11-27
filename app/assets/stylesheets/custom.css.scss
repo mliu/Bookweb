@@ -1,2 +1,202 @@
-@import "bootstrap";
+/***********************ARVO**************************/
+body{
+  font:16px Helvetica,arial,sans-serif;
+  font-family:Helvetica,arial,sans-serif;
+  font-size:16px;
+  font-style:normal;
+  font-variant:normal;
+  font-weight:normal;
+}
 
+/********************NAVBAR**************************/
+.header-space{
+  margin-top:51px;
+}
+
+.navbar{
+  background-color:#f28026;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color:#fff;
+}
+
+.navbar-active{
+  background-color:#e36b0d !important;
+}
+
+.navbar-brand{
+  color:#fff !important;
+  font-size:30px !important;
+}
+
+/***********************INDEX*************************/
+.bookcontent{
+  margin:auto;
+  width:95%;
+  height:290px;
+  padding-top:10px;
+}
+
+.bookunit{
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+  height:300px;
+  background-color:#B2C9D9;
+  margin-top:20px;
+  border-radius:10px;
+}
+
+.bookbutton{
+  margin-top:240px;
+  height:30px;
+}
+
+.bookunitleft{
+  width:25%;
+  float:left;
+  height:290px;
+}
+
+.bookunitrightholder{
+  width:75%;
+  height:290px;
+  margin:auto;
+  float:right;
+}
+
+.bookunitright{
+  width:50%;
+  float:right;
+  height:260px;
+}
+
+.bookunitcenter{
+  width:50%;
+  height:290px;
+  float:left;
+}
+
+.bookheader{
+  margin-top:10px;
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+  height:50px;
+  border-bottom:1px solid gray;
+}
+
+.bookheaderleft{
+  display:inline-block;
+  float:left;
+  color:gray;
+}
+
+.bookheaderright{
+  display:inline-block;
+  float:right;
+  color:gray;
+}
+
+
+
+/***********************LIST************************/
+.listabsolute{
+  width:100%;
+  margin:auto;
+  position:absolute;
+}
+
+.listalign{
+  margin-top:10px;
+  width:140px;
+  margin-right:3%;
+  display:inline;
+}
+
+.listbox{
+  height:40px;
+  border-radius:5px;
+  font-size:1.5em;
+}
+
+.listspace{
+  margin-top:10px;
+}
+
+.listbutton{
+  -moz-transition: opacity .2s linear;
+  -webkit-transition: opacity .2s linear;
+  -ms-transition: opacity .2s linear;
+  -o-transition: opacity .2 linear;
+  transition: opacity .2s linear;
+}
+
+.listbutton:hover{
+  opacity:.8;
+}
+
+.error{
+  color:red;
+}
+
+.noerror{
+  color:black;
+}
+
+#popup{
+  height:170px;
+  width:200px;
+  text-align:center;
+  vertical-align:middle;
+  background-color:#E3E3E3;
+  padding-top:5px;
+  position:absolute;
+  margin-top:40px;
+}
+
+/***********************SEARCH**************************/
+.search{
+  width:400px;
+}
+
+/***********************BASIC SHIT**************************/
+.center{
+  text-align:center;
+  margin-top:10px;
+}
+
+.center-in-page{
+  position:absolute;
+  top:20%;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
+.form-align{
+  margin-top:20px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.header1{
+  font-size:4em;
+  font-weight:bold;
+}
+
+.bold{
+  font-weight:bold;
+}
+
+.orange{
+  color:#f28026;
+}
+
+.white{
+  color:white;
+}

@@ -19,9 +19,6 @@ end
 
 gem 'haml'
 
-# Pure
-gem 'purecss-rails'
-
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
 
 # Bootstrap SCSS for stylesheets

@@ -15,7 +15,6 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       flash[:book_create] = "You have listed your textbook!"
-      @book.user_id = current_user.id
       redirect_to root_path
     else
       render 'new'
@@ -28,6 +27,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:department, :course_num, :title, :author, :isbn, :condition, :asking_price, :trade, :details)
+      params.require(:book).permit(:department, :course_num, :title, :author, :isbn, :condition, :asking_price, :trade, :contact)
     end
 end

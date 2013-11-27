@@ -1,8 +1,9 @@
 Hbook::Application.routes.draw do
-  root 'info#index'
+  root 'books#search'
   get 'about' => 'info#about'
   resources :books
   get '/search', to: 'books#search', as: :search
+  get '/contact', to: 'info#contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

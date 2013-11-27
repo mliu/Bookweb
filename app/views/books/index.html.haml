@@ -15,8 +15,8 @@
   .bookunit
     .bookcontent
       .bookunitleft
-        ="Username: "
-        =link_to User.find_by_user_id(b.user_id).username.humanize, user_url(b.user_id)
+        / ="Username: "
+        / =link_to User.find_by_user_id(b.user_id).username.humanize, user_url(b.user_id)
         %br
         ="Date added: " + b.created_at.strftime("%m-%d-%Y")
         %br
@@ -29,9 +29,9 @@
           ="Condition: " + b.condition
           ="ISBN: " + b.isbn
         .bookunitright
-          ="Listing price: " + number_with_precision(t.storeprice, precision: 2)
-          ="Asking price: " + number_with_precision(t.askingprice, precision: 2)
-          ="Looking to trade for: " + b.trade
+          / ="Listing price: " + number_with_precision(t.storeprice, precision: 2)
+          ="Asking price: " + number_with_precision(t.asking_price, precision: 2)
+          / ="Looking to trade for: " + b.trade
 / .bookunit
 /   .bookcontent
 /     .bookunitleft
