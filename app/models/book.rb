@@ -9,10 +9,12 @@ class Book < ActiveRecord::Base
   validates :asking_price, presence: true, numericality: true
   # Relationships
   belongs_to :school, class_name: "School"
-  # belongs_to :user, class_name: "User"
   
 
-  def self.search(department, course_num)
-    Book.where("department = ? AND course_num = ?", department, course_num.to_s)
+  def self.search(search)
+    if search
+      course = [self[:department], self[:course_num]].join(" ")
+      find(:all, :conditions => ['title LIKE #{search} or author LIKE #{search} or isbn LIKE #{search} or #{course} LIKE #{search}'])
+    end
   end
 end

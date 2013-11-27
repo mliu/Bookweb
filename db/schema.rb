@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127203117) do
+ActiveRecord::Schema.define(version: 20131127231129) do
 
   create_table "books", force: true do |t|
     t.string   "school_id"
@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(version: 20131127203117) do
     t.integer  "isbn"
     t.string   "condition"
     t.decimal  "asking_price"
-    t.datetime "expiration",   default: (Time.now + 1209600).end_of_day
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "expiration",   default: '2013-12-12 04:59:59'
+    t.string   "author"
   end
 
   create_table "courses", force: true do |t|
