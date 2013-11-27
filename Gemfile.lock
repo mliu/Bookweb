@@ -40,8 +40,6 @@ GEM
     coffee-script-source (1.6.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    font-awesome-rails (4.0.3.0)
-      railties (>= 3.2, < 5.0)
     haml (4.0.4)
       tilt
     hike (1.2.3)
@@ -123,7 +121,6 @@ PLATFORMS
 DEPENDENCIES
   anjlab-bootstrap-rails (>= 3.0.0.0)
   coffee-rails (~> 4.0.0)
-  font-awesome-rails
   haml
   jbuilder (~> 1.2)
   jquery-rails
