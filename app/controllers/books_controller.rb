@@ -6,8 +6,14 @@ class BooksController < ApplicationController
   end
 
   def index
-    @search = params[:search]
-    @books = Book.search(params[:search]).sort{|y,x| y.asking_price <=> x.asking_price}
+    @univ = params[:univ]
+    @price_min = params[:min]
+    @price_max = params[:max]
+    @condition = params[:condition]
+    if params[:search]
+      @search = params[:search]      
+    end
+    @books = Book.search(@search, @univ, @price_min, @price_max, @condition).sort{|y,x| y.asking_price <=> x.asking_price}
   end
 
   def create
@@ -26,6 +32,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.fetch(:books, {}).permit(:department, :course_num, :title, :author, :isbn, :condition, :asking_price, :email)
+      params.fetch(:books, {}).permit(:department, :course_num, :title, :isbn, :condition, :asking_price, :email)
     end
 end

@@ -1,7 +1,6 @@
 class Book < ActiveRecord::Base
   # Validations
   validates :department, presence: true
-  validates :course_num, presence: true, numericality: {only_integer: true}
   validates :title, presence: true
   validates :isbn, presence: true, length: {minimum: 10}
   validates :author, presence: true
@@ -11,12 +10,12 @@ class Book < ActiveRecord::Base
   belongs_to :school, class_name: "School"
   
 
-  def self.search(search)
+  def self.search(search, univ, price_min, price_max, condition)
     if search == ''
       find(:all)
     else
-      course = [@department, @course_num].join(" ")
-      where("title LIKE ? OR isbn LIKE ?", search, search)
+      search = "%" + search + "%"
+      where("title LIKE ? OR isbn LIKE ? OR course LIKE ? AND (school_id = ? AND (asking_price >= ? AND asking_price <= ?) AND condition = ?)", search, search, search, univ, price_min, price_max, condition)
     end
   end
 end
