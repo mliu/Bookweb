@@ -15,8 +15,8 @@ class Book < ActiveRecord::Base
     if search == ''
       find(:all)
     else
-      course = [:department, :course_num].join(" ")
-      where("title LIKE #{search} OR author LIKE #{search} OR isbn LIKE #{search} OR #{course} LIKE #{search}")
+      course = [@department, @course_num].join(" ")
+      where("title LIKE ? OR isbn LIKE ?", search, search)
     end
   end
 end
