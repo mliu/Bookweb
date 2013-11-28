@@ -6,8 +6,7 @@ class BooksController < ApplicationController
   end
 
   def index
-    @department = params[:department]
-    @course_num = params[:course_num]
+    @search = params[:search]
     @books = Book.search(params[:search]).sort{|y,x| y.asking_price <=> x.asking_price}
   end
 

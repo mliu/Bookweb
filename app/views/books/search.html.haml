@@ -6,7 +6,7 @@
     .orange.bold
       Sell for more. Buy for less.
     .form-align  
-      =form_tag(books_path, method: "get") do
+      %form{action: books_path, method: "get"}
         .input-group.search.form-align
           =text_field_tag :search, params[:search], placeholder: "Search by ISBN, title, or course", maxlength:30, class: "form-control"
           %span.input-group-addon{style:"padding:0;"}
