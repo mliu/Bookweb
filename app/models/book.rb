@@ -12,9 +12,11 @@ class Book < ActiveRecord::Base
   
 
   def self.search(search)
-    if search
-      course = [self[:department], self[:course_num]].join(" ")
-      find(:all, :conditions => ['title LIKE #{search} or author LIKE #{search} or isbn LIKE #{search} or #{course} LIKE #{search}'])
+    if search == ''
+      find(:all)
+    else
+      course = [:department, :course_num].join(" ")
+      where("title LIKE #{search} OR author LIKE #{search} OR isbn LIKE #{search} OR #{course} LIKE #{search}")
     end
   end
 end
