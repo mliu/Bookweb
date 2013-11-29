@@ -14,6 +14,7 @@ class BooksController < ApplicationController
       @search = params[:search]      
     end
     @books = Book.search(@search, @univ, @price_min, @price_max, @condition).sort{|y,x| y.asking_price <=> x.asking_price}
+    #@books = Book.all
   end
 
   def create
@@ -32,6 +33,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.fetch(:books, {}).permit(:department, :course_num, :title, :isbn, :condition, :asking_price, :email)
+      params.require(:book).permit(:school, :course, :title, :isbn, :condition, :asking_price, :email)
     end
 end
