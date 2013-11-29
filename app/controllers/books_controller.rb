@@ -30,7 +30,9 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
   end
-
+  def show
+    @book = Book.new
+  end
   private
     def book_params
       params.require(:book).permit(:school, :course, :title, :isbn, :condition, :asking_price, :email)

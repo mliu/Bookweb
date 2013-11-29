@@ -9,7 +9,7 @@ class Book < ActiveRecord::Base
   
 
   def self.search(search, univ, price_min, price_max, condition)
-    if search == ''
+    if search == '' or search == nil
       find(:all)
     else
       search = "%" + search + "%"

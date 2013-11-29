@@ -5,7 +5,7 @@
   %ul{class: "nav navbar-nav"}
     %li{class: "#{'navbar-active' if current_page?(search_path) or current_page?(root_path)}"}
       =link_to "Buy Textbooks", search_path
-    %li{class: "#{'navbar-active' if current_page?(new_book_path)}"}
-      =link_to "Sell Textbooks", new_book_path
+    %li{class: "#{'navbar-active' if current_page?(new_book_path) or current_page?(book_step1_path(@book))}"}
+      =link_to "Sell Textbooks", book_step1_path(@book)
     %li{class: "#{'navbar-active' if current_page?(contact_path)}"}
       =link_to "Contact Us", contact_path
