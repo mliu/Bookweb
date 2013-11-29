@@ -2,7 +2,7 @@ class Book < ActiveRecord::Base
   # Validations
   validates :email, presence: true
   validates :title, presence: true
-  validates :isbn, presence: true, length: {minimum: 10}
+  validates :course, presence: true
   validates :asking_price, presence: true, numericality: true
   # Relationships
   belongs_to :school, class_name: "School"
