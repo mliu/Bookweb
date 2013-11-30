@@ -32,7 +32,7 @@ class BooksController < ApplicationController
     @book = Book.new
     render 'new'
   end
-  def show
+  def sell1
     @book = Book.new
     #render 'show'
   end
