@@ -1,0 +1,19 @@
+  <body>
+    <div class="container center-in-page">
+
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <%= form_for @book, url: {action: "new"}, method: "get", html: {class: "form-horizontal"} do |f| %>
+            <legend>Enter an ISBN</legend>
+            <div class="input-group col-lg-12">
+                <div class="">
+                  <%=f.text_field :isbn, placeholder: "978-1234567890", maxlength:100, class: "form-control" %>
+                </div>
+                <span class="input-group-btn">
+                  <%= f.submit "Next Step", class: "btn btn-primary" %>
+                </span>
+            </div><!-- /input-group -->
+          <% end %>
+        </div>
+      </div>
+  </body>
