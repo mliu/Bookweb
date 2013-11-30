@@ -1,64 +1,27 @@
 <body>
     <div class="container" style="margin-top: 100px">
-        <div class="row">
+      <div class="row">
 
-        <div class="col-md-3">
-          <form class="form-horizontal well" role="form" method="get" action=<%= books_path %>>
-            <div class="">
-              <div class="form-group">
-                  <label for="school" class="col-lg-3 control-label">University</label>
-                  <div class="col-lg-10">
-                    <select class="input-lg col-lg-12" name="univ" required="" value=<%= params[:univ] %>>
-                      <optgroup label="Virginia">
-                        <option value="Virginia_Tech">Virginia Tech</option>
-                      </optgroup>
-                    </select>
-                  </div>
-              </div>
-            </div>
-            <div class="">
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Price Range</label>
-                <div class="col-lg-4">
-                  <input type="input" name="min" class="form-control" placeholder="Min" value=<%= params[:min] %>>
-                </div>
-                <div class="col-lg-4">
-                  <input type="input" name="max" class="form-control" placeholder="Max" value=<%= params[:max] %>>
-                </div>
-              </div>
-            </div>
-             <div class="">
-              <div class="form-group">
-                  <label for="condition" class="col-lg-3 control-label">Condition</label>
-                  <div class="col-lg-10">
-                    <select multiple class="form-control" name="condition" value=<%= params[:condition] %>>
-                      <option value="brand_new">Brand New</option>
-                      <option value="lightly_used">Lightly Used</option>
-                      <option value="used">Used</option>
-                      <option value="heavily_used">Heavily Used</option>
-                    </select>
-                  </div>
-              </div>
-            </div>
-             <button class="btn btn-danger" type="submit">Filter</button>
-        </div>
-        <div class="col-lg-9">
-          <div class="well">
-            <h4>Book Search</h4>
-              <div class="input-group">
-                <input type="text" class="form-control" name="search" placeholder="Search by ISBN, title, or course" value=<%= params[:search] %>>
-                <span class="input-group-btn">
-                  <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-              </div><!-- /input-group -->
+        <div class="col-lg-12">
+          <form class="form-horizontal" role="form" method="get" action=<%= books_path %>>
+            
+       
+            <div class="well">
+              <h4>Book Search</h4>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="search" placeholder="Search by ISBN, title, or course" value=<%= params[:search] %>>
+                  <span class="input-group-btn">
+                    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                  </span>
+                </div><!-- /input-group -->
             </form>
           </div><!-- /well -->
         </div>
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div class="row">
             <% if @books.count != 0 %>
             <% @books.each do |book| %>
-            <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="col-sm-3 col-lg-3 col-md-3">
               <div class="thumbnail">
                 <img src="http://placehold.it/180x220" alt="">
                 <div class="caption">
