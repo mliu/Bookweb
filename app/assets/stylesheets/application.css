@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require twitter/bootstrap
- *= requite font-awesome
+ *= require font-awesome
  *= require_tree .
  */
