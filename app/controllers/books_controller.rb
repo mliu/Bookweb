@@ -28,12 +28,12 @@ class BooksController < ApplicationController
   end
 
   def new
-    @isbn = params[:isbn]
     @book = Book.new
     render 'new'
   end
   def sell1
     @book = Book.new
+    @isbn = params[:isbn]
     #render 'show'
   end
   private
