@@ -1,7 +1,9 @@
-class UserMailer < ActionMailer::Base
-  default from: "noreply@bookmrkt.com"
-
-  def buy_email(user)
-    @user = user
-
+class UserMailer < ActionMailer::Base 	
+  def email_user(fromUser, toUser, subject, message)
+    mail(from: fromUser,
+    	 to: toUser, 
+    	 subject: subject,
+    	 body: message
+    	 )
+  end
 end
