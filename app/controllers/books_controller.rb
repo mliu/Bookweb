@@ -33,7 +33,7 @@ class BooksController < ApplicationController
     @book = Book.new
     isbn = params[:book][:isbn]
     @google_book = GoogleBooks.search(isbn)
-    @first_book = books.first
+    @first_book = @google_book.first
   end
 
   def sell1
