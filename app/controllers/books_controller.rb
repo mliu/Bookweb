@@ -29,7 +29,6 @@ class BooksController < ApplicationController
   end
 
   def new
-    require 'googlebooks'
     @book = Book.new
     isbn = params[:book][:isbn]
     @google_book = GoogleBooks.search(isbn)
