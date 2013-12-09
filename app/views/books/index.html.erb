@@ -58,15 +58,7 @@
                     <h4 class="modal-title"><%= book.title %> - <%= book.course %></h4>
                   </div>
                   <div class="modal-body">
-                    <form name="sentMessage" class="well" id="contactForm"  novalidate>
-                        <div class="control-group">
-                              <div class="controls">
-                                  <input type="text" class="form-control" 
-                                                placeholder="Full Name" id="name" required
-                                             data-validation-required-message="Please enter your name" />
-                                  <p class="help-block"></p>
-                             </div>
-                           </div>         
+                    <%= form_for @book, :remote => true, url: {action: :email_user}, method: :post, html: {class: "well"} do |f| %>    
                           <div class="control-group">
                             <div class="controls">
                                   <input type="email" class="form-control" placeholder="Email" 
@@ -79,7 +71,8 @@
                             <div class="controls">
                                   <input type="text" class="form-control" placeholder="Subject" 
                                                          id="subject" required
-                                                        data-validation-required-message="Please enter the subject" />
+                                                        data-validation-required-message="Please enter the subject"
+                                                        value=<%= book.title %> />
                                   <p class="help-block"></p>
                             </div>
                           </div>            
@@ -94,8 +87,9 @@
                           </div>
                          </div>                  
                        <div id="success"> </div> <!-- For success/fail messages -->
-                      <button type="submit" class="btn btn-primary pull-right">Send</button><br />
-                    </form>
+                       <%= f.submit "Send", class: "btn btn-primary pull-right" %>
+                       <br />
+                    <% end %>
                   </div>
                 </div><!-- /.modal-content -->
               </div><!-- /.modal-dialog -->

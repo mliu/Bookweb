@@ -6,6 +6,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new
     @univ = params[:univ]
     @price_min = params[:min]
     @price_max = params[:max]
@@ -28,13 +29,19 @@ class BooksController < ApplicationController
   end
 
   def new
+    require 'googlebooks'
     @book = Book.new
-    render 'new'
+    isbn = params[:book][:isbn]
+    @google_book = GoogleBooks.search(isbn)
+    @first_book = books.first
   end
+
   def sell1
     @book = Book.new
-    @isbn = params[:isbn]
     #render 'show'
+  end
+  def email_user
+    UserMailer.email_user(params[:from], params[:to], params[:subject], params[:message]).deliver
   end
   private
     def book_params
