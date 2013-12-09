@@ -29,7 +29,6 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    render 'new'
   end
   def sell1
     @book = Book.new
