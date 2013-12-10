@@ -28,12 +28,12 @@
             <div class="form-group">
               <label for="school" class="col-lg-2 control-label">University</label>
               <div class="col-lg-10">
-                <%= f.select :school_id, options_for_select([['Select One', ""], ['Virginia Tech', "1"]]), :required => true, class: "selectpicker input-lg col-lg-6" %>
+                <%= f.select :school_id, options_for_select([['Select One', ""], ['Virginia Tech', "Virginia Tech"]]), :required => true, class: "selectpicker input-lg col-lg-6" %>
               </div>
             </div>
             <div class="form-group">
               <label for="condition" class="col-lg-2 control-label">Condition</label>
-              <%= f.select :condition, options_for_select([['Select One', ""], ['Brand New', "1"], ['Lightly Used', "2"], ['Used', "3"],['Heavily Used', "4"]]), :required => true, class: "selectpicker input-lg col-lg-6" %>
+              <%= f.select :condition, options_for_select([['Select One', ""], ['Brand New', "Brand New"], ['Lightly Used', "Lightly Used"], ['Used', "Used"],['Heavily Used', "Heavily Used"]]), :required => true, class: "selectpicker input-lg col-lg-6" %>
             </div>
             <div class="form-group">
               <label for="course" class="col-lg-2 control-label">Course: </label>

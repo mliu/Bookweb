@@ -7,7 +7,7 @@
       Sell for more. Buy for less.
     .form-align.col-lg-12
       %form{action: books_path, method: "get"}
-        =select_tag 'school_id', options_for_select([['Select One', ""], ['Virginia Tech', "1"]]), :required => true, class: "input-sm"
+        =select_tag 'school_id', options_for_select([['Select One', ""], ['Virginia Tech', "Virginia Tech"]]), :required => true, class: "input-sm"
         .input-group.search.form-align
           =text_field_tag :search, params[:search], placeholder: "Search by ISBN, title, or course", maxlength:100, class: "form-control"
           %span.input-group-addon{style:"padding:0;"}
