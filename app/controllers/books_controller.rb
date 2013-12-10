@@ -7,14 +7,10 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    @univ = params[:univ]
-    @price_min = params[:min]
-    @price_max = params[:max]
-    @condition = params[:condition]
-    if params[:search]
-      @search = params[:search]      
-    end
-    @books = Book.search(@search, @univ, @price_min, @price_max, @condition).sort{|y,x| y.asking_price <=> x.asking_price}
+    @univ = params[:school_id]
+    @search = params[:search]    
+    results = Book.search(@search, @univ)
+    @books = results.sort{|y,x| y.asking_price <=> x.asking_price}
     #@books = Book.all
   end
 
@@ -30,8 +26,8 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
-    isbn = params[:book][:isbn]
-    @google_book = GoogleBooks.search(isbn)
+    @isbn = params[:book][:isbn]
+    @google_book = GoogleBooks.search(@isbn)
     @first_book = @google_book.first
   end
 
@@ -39,11 +35,14 @@ class BooksController < ApplicationController
     @book = Book.new
     #render 'show'
   end
+
   def email_user
     UserMailer.email_user(params[:from], params[:to], params[:subject], params[:message]).deliver
+    redirect_to :back
   end
+
   private
     def book_params
-      params.require(:book).permit(:school, :course, :title, :isbn, :condition, :asking_price, :email)
+      params.require(:book).permit(:school_id, :course, :title, :isbn, :condition, :asking_price, :email, :img_url)
     end
 end
