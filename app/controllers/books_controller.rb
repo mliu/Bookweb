@@ -16,23 +16,24 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    # @book[:asking_price].gsub("$","")
     if @book.save
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
       flash[:error] = "Error: Book failed to save"
-      redirect_to root_path
+      redirect_to new_path
     end
   end
 
   def new
-    @book = Book.new(params[:book][:isbn])
+    @book = Book.new(isbn: params[:book][:isbn])
     isbn = params[:book][:isbn].gsub("-","")
     @google_book = GoogleBooks.search('isbn:' + isbn)
     @first_book = @google_book.first
     if @first_book.nil?
       flash[:error] = "No such book exists with ISBN " + isbn
-      redirect_to root_path
+      redirect_to sell1_path
     end
   end
 
