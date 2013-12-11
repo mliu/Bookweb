@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @univ = params[:school_id]
-    @search = params[:search]    
+    @search = params[:search]
     results = Book.search(@search, @univ)
     @books = results.sort{|y,x| y.asking_price <=> x.asking_price}
     #@books = Book.all
@@ -20,13 +20,14 @@ class BooksController < ApplicationController
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
-      render 'new'
+      flash[:error] = "Error: Book failed to save"
+      redirect_to root_path
     end
   end
 
   def new
+    @book = Book.new(params[:book][:isbn])
     isbn = params[:book][:isbn].gsub("-","")
-    @book = Book.new
     @google_book = GoogleBooks.search('isbn:' + isbn)
     @first_book = @google_book.first
     if @first_book.nil?
