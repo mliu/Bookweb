@@ -8,12 +8,13 @@ class Book < ActiveRecord::Base
   belongs_to :school, class_name: "School"
   
 
-  def self.search(search, univ, price_min, price_max, condition)
+  def self.search(search, univ)
     if search == '' or search == nil
       find(:all)
     else
+      isbn = search
       search = "%" + search + "%"
-      where("title LIKE ? OR isbn LIKE ? OR course LIKE ? AND (school_id = ? AND (asking_price >= ? AND asking_price <= ?) AND condition = ?)", search, search, search, univ, price_min, price_max, condition)
+      where("school_id = ? AND (title LIKE ? OR isbn = ? OR course LIKE ?)", univ, search, isbn, search)
     end
   end
 end
