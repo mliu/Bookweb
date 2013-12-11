@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128043300) do
+ActiveRecord::Schema.define(version: 20131209021047) do
 
   create_table "books", force: true do |t|
     t.string   "school_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131128043300) do
     t.datetime "expiration",   default: '2013-12-23 04:59:59'
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img_url"
   end
 
   create_table "courses", force: true do |t|

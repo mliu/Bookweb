@@ -15,13 +15,15 @@ class BooksController < ApplicationController
       @search = params[:search]      
     end
     @books = Book.search(@search, @univ, @price_min, @price_max, @condition).sort{|y,x| y.asking_price <=> x.asking_price}
+    # @books.each do |b|
+
     #@books = Book.all
   end
 
   def create
     @book = Book.new(book_params)
     if @book.save
-      flash[:book_create] = "You have listed your textbook!"
+      flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
       render 'new'
@@ -29,10 +31,14 @@ class BooksController < ApplicationController
   end
 
   def new
+    isbn = params[:book][:isbn].gsub("-","")
     @book = Book.new
-    isbn = params[:book][:isbn]
-    @google_book = GoogleBooks.search(isbn)
+    @google_book = GoogleBooks.search('isbn:' + isbn)
     @first_book = @google_book.first
+    if @first_book.nil?
+      flash[:error] = "No such book exists with ISBN " + isbn
+      redirect_to root_path
+    end
   end
 
   def sell1
