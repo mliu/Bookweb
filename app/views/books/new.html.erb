@@ -3,7 +3,7 @@
 
       <div class="row">
         <div class="col-lg-6">
-          <img style="margin-left: 100px" width="300px" src=<%= @first_book.image_link %> alt=<%= @first_book.title %> />
+          <img style="margin-left: 100px" width="300px" src=<%= @first_book.image_link(:zoom => 4) %> alt=<%= @first_book.title %> />
         </div>
         <div class="col-lg-6">
           <%= form_for @book, url: {action: "create"}, method: "post", html: {class: "form-horizontal"} do |f| %>
@@ -20,45 +20,47 @@
             <% end %>
             <legend>Posting Information</legend>
             <div class="form-group">
-              <label for="course" class="col-lg-2 control-label">Email: </label>
+              <%= f.label :email, class:"col-lg-2 control-label" %>
               <div class="col-lg-6">
                 <%=f.text_field :email, placeholder: "(e.g.) abc123@vt.edu", maxlength:100, class: "form-control" %>
               </div>
             </div>
             <div class="form-group">
-              <label for="school" class="col-lg-2 control-label">University</label>
+              <%= f.label :school_id, class:"col-lg-2 control-label" %>
               <div class="col-lg-10">
                 <%= f.select :school_id, options_for_select([['Select One', ""], ['Virginia Tech', "Virginia Tech"]]), :required => true, class: "selectpicker input-lg col-lg-6" %>
               </div>
             </div>
             <div class="form-group">
-              <label for="condition" class="col-lg-2 control-label">Condition</label>
-              <%= f.select :condition, options_for_select([['Select One', ""], ['Brand New', "Brand New"], ['Lightly Used', "Lightly Used"], ['Used', "Used"],['Heavily Used', "Heavily Used"]]), :required => true, class: "selectpicker input-lg col-lg-6" %>
+              <%= f.label :condition, class:"col-lg-2 control-label" %>
+              <div class="col-lg-10">
+                <%= f.select :condition, options_for_select([['Select One', ""], ['Brand New', "Brand New"], ['Lightly Used', "Lightly Used"], ['Used', "Used"],['Heavily Used', "Heavily Used"]]), class: "selectpicker input-lg col-lg-6",  :required => true %>
+              </div>
             </div>
             <div class="form-group">
-              <label for="course" class="col-lg-2 control-label">Course: </label>
+              <label for="course" class="col-lg-2 control-label">Course </label>
               <div class="col-lg-6">
                 <%= f.text_field :course, placeholder: "(e.g.) ENGE 1024", class: "form-control"%>
               </div>
             </div>
             <div class="form-group">
-              <label for="title" class="col-lg-2 control-label">Title: </label>
+              <label for="title" class="col-lg-2 control-label">Title </label>
               <div class="col-lg-6">
                 <%= f.text_field :title, placeholder: "(e.g.) Intro to Engineering", class: "form-control"%>
               </div>
             </div>
             <div class="form-group">
-              <label for="price" class="col-lg-2 control-label">Price:</label>
+              <label for="price" class="col-lg-2 control-label">Price</label>
               <div class="col-lg-6">
                 <!-- <span class="input-group-addon">$</span> -->
                 <%= f.text_field :asking_price, placeholder: "(e.g.) 10.99", class: "form-control"%>
               </div>
             </div>
             <div class="form-group">
-              <div class="col-lg-offset-2 col-lg-10">
+              <div class="col-lg-offset-2 col-lg-12">
                 <%= f.hidden_field :img_url, :value=> @first_book.image_link %>
                 <%= f.hidden_field :isbn, :value=> @isbn %>
-                <%= f.submit "Post", class: "btn btn-primary" %>
+                <%= f.submit "Post", class: "btn btn-primary col-lg-5" %>
               </div>
             </div>
           <% end %>
