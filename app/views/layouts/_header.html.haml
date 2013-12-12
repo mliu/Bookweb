@@ -3,7 +3,7 @@
     %a{class: "navbar-brand", href: root_path}
       PUT LOGO HERE
   %ul{class: "nav navbar-nav"}
-    %li{class: "#{'navbar-active' if current_page?(search_path) or current_page?(root_path)}"}
+    %li{class: "#{'navbar-active' if current_page?(books_path) or current_page?(root_path) or current_page?(search_path)}"}
       =link_to "Buy Textbooks", search_path
     %li{class: "#{'navbar-active' if current_page?(new_book_path) or current_page?(sell1_path(@book))}"}
       =link_to "Sell Textbooks", sell1_path(@book)
