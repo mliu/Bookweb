@@ -200,3 +200,18 @@ body{
 .white{
   color:white;
 }
+
+.condition-tag {
+  position: absolute;
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+  left:24px;
+}
+
+.square {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
