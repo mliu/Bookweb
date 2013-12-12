@@ -7,7 +7,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string   "title"
       t.integer  "isbn"
       t.string   "condition"
-      t.decimal  "asking_price", scale: 2
+      t.decimal  "asking_price"
       t.datetime "expiration",   default: (Time.now + 1209600).end_of_day
     end
   end
