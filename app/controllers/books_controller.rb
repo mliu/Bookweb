@@ -11,27 +11,26 @@ class BooksController < ApplicationController
     @search = params[:search]
     results = Book.search(@search, @univ)
     @books = results.sort{|y,x| y.asking_price <=> x.asking_price}
-    #@books = Book.all
   end
 
   def create
     @book = Book.new(book_params)
-    # @book[:asking_price].gsub("$","")
     if @book.save
+      @book.update_attribute(:isbn, session[:isbn])
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
-      flash[:error] = "Error: Book failed to save"
-      redirect_to new_path
+      redirect_to sell2_path
     end
   end
 
   def new
-    @book = Book.new(isbn: params[:book][:isbn])
+    session[:isbn] ||= params[:book][:isbn]
+    @book = Book.new
     isbn = params[:book][:isbn].gsub("-","")
     @google_book = GoogleBooks.search('isbn:' + isbn)
     @first_book = @google_book.first
-    if @first_book.nil? or @first_book.image_link(:zoom => 4).nil?
+    if @first_book.nil? or @first_book.image_link.nil?
       flash[:error] = "No such book exists with ISBN " + isbn
       redirect_to sell1_path
     end
@@ -49,6 +48,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:school_id, :course, :title, :isbn, :condition, :asking_price, :email, :img_url)
+      params.require(:book).permit(:school_id, :course, :title, :condition, :asking_price, :email, :img_url)
     end
 end

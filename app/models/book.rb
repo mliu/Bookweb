@@ -3,6 +3,8 @@ class Book < ActiveRecord::Base
   validates :email, presence: true
   validates :title, presence: true
   validates :course, presence: true
+  validates :school, presence: true
+  validates :condition, presence: true
   validates :asking_price, presence: true, numericality: true
   # Relationships
   belongs_to :school, class_name: "School"
