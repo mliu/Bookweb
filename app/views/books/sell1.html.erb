@@ -7,7 +7,7 @@
             <legend>Enter an ISBN</legend>
             <div class="input-group col-lg-12">
                 <div class="">
-                  <%=f.text_field :isbn, placeholder: "978-1234567890", maxlength:100, class: "form-control" %>
+                  <%=f.text_field :isbn, :required => true, placeholder: "978-1234567890", maxlength: 100, class: "form-control" %>
                 </div>
                 <span class="input-group-btn">
                   <%= f.submit "Next Step", class: "btn btn-primary" %>

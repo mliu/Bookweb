@@ -32,9 +32,9 @@
               </div>
             </div>
             <div class="form-group">
-              <%= f.label :condition, class:"col-lg-2 control-label" %>
+              <%= f.label :condition, class: "col-lg-2 control-label" %>
               <div class="col-lg-10">
-                <%= f.select :condition, options_for_select([['Select One', ""], ['Brand New', "Brand New"], ['Lightly Used', "Lightly Used"], ['Used', "Used"],['Heavily Used', "Heavily Used"]]), class: "selectpicker input-lg col-lg-6",  :required => true %>
+                <%= f.select :condition, options_for_select([['Select One', ""], ['Brand New', "1"], ['Lightly Used', "2"], ['Used', "3"],['Heavily Used', "4"]]), class: "selectpicker input-lg col-lg-6",  :required => true %>
               </div>
             </div>
             <div class="form-group">
@@ -58,8 +58,8 @@
             </div>
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-12">
-                <%= f.hidden_field :img_url, :value=> @first_book.image_link %>
-                <%= f.hidden_field :isbn, :value=> @isbn %>
+                <%= f.hidden_field :img_url, :value => @first_book.image_link(:zoom => 4) %>
+                <%= f.hidden_field :isbn, :value => @isbn %>
                 <%= f.submit "Post", class: "btn btn-primary col-lg-5" %>
               </div>
             </div>
