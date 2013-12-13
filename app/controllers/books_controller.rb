@@ -10,7 +10,17 @@ class BooksController < ApplicationController
     @univ = params[:school_id]
     @search = params[:search]
     results = Book.search(@search, @univ)
-    @books = results.sort{|y,x| y.asking_price <=> x.asking_price}
+    if params[:sort] == "high"
+       @books = results.sort{|x,y| y.asking_price <=> x.asking_price}
+    elsif params[:sort] == "asc"
+       @books = results.sort{|y,x| y.condition <=> x.condition}
+    elsif params[:sort] == "desc"
+       @books = results.sort{|x,y| y.condition <=> x.condition}
+    else
+       @books = results.sort{|y,x| y.asking_price <=> x.asking_price}
+    end
+  
+    #@books = Book.all
   end
 
   def create
@@ -25,13 +35,12 @@ class BooksController < ApplicationController
   end
 
   def new
-    session[:isbn] ||= params[:book][:isbn]
-    @book = Book.new
-    isbn = params[:book][:isbn].gsub("-","")
-    @google_book = GoogleBooks.search('isbn:' + isbn)
+    @book = Book.new(isbn: params[:book][:isbn])
+    @isbn = params[:book][:isbn].gsub("-","")
+    @google_book = GoogleBooks.search('isbn:' + @isbn)
     @first_book = @google_book.first
-    if @first_book.nil? or @first_book.image_link.nil?
-      flash[:error] = "No such book exists with ISBN " + isbn
+    if @first_book.nil? or @first_book.image_link(:zoom => 4).nil?
+      flash[:error] = "No such book exists with ISBN " + @isbn
       redirect_to sell1_path
     end
   end
