@@ -27,27 +27,27 @@
             </button>
             <ul class="dropdown-menu" role="menu" style="width: 200px">
               <li>
-                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "high") do %>
+                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "high", :page => params[:page]) do %>
                 Price (High)
                 <span class="pull-right glyphicon glyphicon-arrow-up"></span>
                 <% end %>
                 <!--<a href=<%= books_path("high") %>>Price (High)</a>-->
               </li>
               <li>
-                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "low") do %>
+                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search], :sort => "low", :page => params[:page]) do %>
                 Price (Low)
                 <span class="pull-right glyphicon glyphicon-arrow-down"></span>
                 <% end %>
               </li>
               <li class="divider"></li>
               <li>
-                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "asc") do %>
+                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "asc", :page => params[:page]) do %>
                 Condition (ASC)
                 <span class="pull-right glyphicon glyphicon-arrow-up"></span>
                 <% end %>
               </li>
               <li>
-                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "desc") do %>
+                <%= link_to books_path(@book, :school_id => params[:school_id], :search => params[:search],:sort => "desc", :page => params[:page]) do %>
                 Condition (DESC)
                 <span class="pull-right glyphicon glyphicon-arrow-down"></span>
                 <% end %>
@@ -143,6 +143,10 @@
             </div><!-- /.modal -->
           <% end %>
           </div>
+          <div class="text-center">
+            <%= will_paginate @books, renderer: BootstrapPagination::Rails %>
+          </div>
+          
           <% else %>
           <h3>No books found</h3>
           <% end %>

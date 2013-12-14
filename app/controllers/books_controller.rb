@@ -11,13 +11,13 @@ class BooksController < ApplicationController
     @search = params[:search]
     results = Book.search(@search, @univ)
     if params[:sort] == "high"
-       @books = results.sort{|x,y| y.asking_price <=> x.asking_price}
+       @books = results.paginate(:page => params[:page], :per_page => 1, :order => "asking_price DESC")
     elsif params[:sort] == "asc"
-       @books = results.sort{|y,x| y.condition <=> x.condition}
+       @books = results.paginate(:page => params[:page], :per_page => 1, :order => "asking_price ASC")
     elsif params[:sort] == "desc"
-       @books = results.sort{|x,y| y.condition <=> x.condition}
+       @books = results.paginate(:page => params[:page], :per_page => 1, :order => "condition DESC")
     else
-       @books = results.sort{|y,x| y.asking_price <=> x.asking_price}
+       @books = results.paginate(:page => params[:page], :per_page => 1, :order => "condition ASC")
     end
    
     #@books = Book.all

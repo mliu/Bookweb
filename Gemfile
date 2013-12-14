@@ -51,6 +51,8 @@ end
 
 gem "googlebooks", "~> 0.0.8"
 
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
