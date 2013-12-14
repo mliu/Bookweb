@@ -63,4 +63,3 @@ Hbook::Application.routes.draw do
   #     resources :products
   #   end
 end
->>>>>>> c75e0e7594e9e7684fc72f576abda3e6fb27f816
