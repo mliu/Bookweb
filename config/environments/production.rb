@@ -81,4 +81,22 @@ Hbook::Application.configure do
   #Use Arvo
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .ttf purecss.css.scss )
+
+  config.action_mailer.default_url_options = { :host => 'bookmrkt.com' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "bookmrkt.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "bookmrkt@gmail.com",
+    password: "Hokie757"
+}
 end

@@ -25,7 +25,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    if @book.save!
+    if @book.save
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
@@ -50,7 +50,8 @@ class BooksController < ApplicationController
   end
 
   def email_user
-    UserMailer.email_user(params[:from], params[:to], params[:subject], params[:message]).deliver
+    email = Book.find(params[:book][:book_id]).email
+    UserMailer.email_user(params[:from], email, params[:subject], params[:message]).deliver
     redirect_to :back
   end
 
