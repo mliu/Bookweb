@@ -16,11 +16,9 @@
           <% end %>
           <br>
           <%- flash.each do |name, msg|%>
-            <%- if name == :error %>
-              <div class="red">
-                <%= msg %>
-              </div>
-            <% end %>
+            <div class="red">
+              <%= msg %>
+            </div>
           <% end %>
         </div>
       </div>
