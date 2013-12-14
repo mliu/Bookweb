@@ -19,19 +19,18 @@ class BooksController < ApplicationController
     else
        @books = results.paginate(:page => params[:page], :per_page => 1, :order => "condition ASC")
     end
-   
+  
     #@books = Book.all
   end
 
   def create
     @book = Book.new(book_params)
-    # @book[:asking_price].gsub("$","")
     if @book.save
+      @book.update_attribute(:isbn, session[:isbn])
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
-      flash[:error] = "Error: Book failed to save"
-      redirect_to new_path
+      redirect_to sell2_path
     end
   end
 
@@ -58,6 +57,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:school_id, :course, :title, :isbn, :condition, :asking_price, :email, :img_url)
+      params.require(:book).permit(:school_id, :course, :title, :condition, :asking_price, :email, :img_url)
     end
 end

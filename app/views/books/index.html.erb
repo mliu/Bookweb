@@ -88,7 +88,7 @@
                 </h4>
                 <a href="" data-toggle="modal" data-target=<%= '#' + book.title + index.to_s%> ><img width="200px"src=<%= book.img_url %> alt=""></a>
                 <div class="caption">
-                  <h4 class="pull-right">$<%= book.asking_price %></h4>
+                  <h4 class="pull-right">$<%= number_with_precision(book.asking_price, precision: 2) %></h4>
                   <h4 class=""><%= book.course %></h4>
                   <p class="text-center"><%= book.title %></p>
                 </div>
