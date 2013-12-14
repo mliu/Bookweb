@@ -51,7 +51,18 @@ class BooksController < ApplicationController
   end
 
   def email_user
-    UserMailer.email_user(params[:from], params[:to], params[:subject], params[:message]).deliver
+    email = Book.find(params[:book][:book_id]).email
+    UserMailer.email_user(params[:from], email, params[:subject], params[:message]).deliver
+    redirect_to :back
+  end
+
+  def contact
+    @book = Book.new
+  end
+
+  def email_me
+    UserMailer.email_me(params[:from], params[:subject], params[:message]).deliver
+    flash[:success] = "Email sent! Thank you for contacting us."
     redirect_to :back
   end
 

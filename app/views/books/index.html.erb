@@ -134,6 +134,7 @@
                           </div>
                          </div>                  
                        <div id="success"> </div> <!-- For success/fail messages -->
+                       <%= f.hidden_field :book_id, :value => book.id %>
                        <%= f.submit "Send", class: "btn btn-primary pull-right" %>
                        <br />
                     <% end %>

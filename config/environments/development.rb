@@ -30,4 +30,22 @@ Hbook::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.assets.enabled = true
+
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => 'bookmrkt.com' }
+ 
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+  
+  config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 25,
+  :user_name => "bookmrkt@gmail.com",
+  :password  => "4KD9EjsFFAEpbgNiVrSpRA"
+}
 end

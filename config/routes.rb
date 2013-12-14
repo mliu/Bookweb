@@ -4,9 +4,10 @@ Hbook::Application.routes.draw do
   resources :books
   get '/search', to: 'books#search', as: :search
   get 'sell' => 'books#new'
-  get '/contact', to: 'info#contact'
+  get '/contact', to: 'books#contact'
   get 'sell1', to: 'books#sell1'
   get 'email_user' => 'books#email_user'
+  get 'email_me' => 'books#email_me'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
