@@ -32,7 +32,7 @@ Hbook::Application.configure do
   config.assets.enabled = true
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'bookmrkt.com' }
  
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
@@ -41,13 +41,11 @@ Hbook::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
+  
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "bookmrkt.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: "bookmrkt@gmail.com",
-    password: "Hokie757"
+  :address   => "smtp.mandrillapp.com",
+  :port      => 25,
+  :user_name => "bookmrkt@gmail.com",
+  :password  => "4KD9EjsFFAEpbgNiVrSpRA"
 }
 end

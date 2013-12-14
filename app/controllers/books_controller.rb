@@ -56,6 +56,16 @@ class BooksController < ApplicationController
     redirect_to :back
   end
 
+  def contact
+    @book = Book.new
+  end
+
+  def email_me
+    UserMailer.email_me(params[:from], params[:subject], params[:message]).deliver
+    flash[:success] = "Email sent! Thank you for contacting us."
+    redirect_to :back
+  end
+
   private
     def book_params
       params.require(:book).permit(:school_id, :isbn, :course, :title, :condition, :asking_price, :email, :img_url)
