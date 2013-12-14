@@ -25,11 +25,12 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    if @book.save!
+    if @book.save
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
       redirect_to sell1_path
+      flash[:error] = "Oops, there were some errors with your book: " + @book.errors.full_messages.to_sentence
     end
   end
 
