@@ -3,8 +3,8 @@ class Book < ActiveRecord::Base
   validates :email, presence: true
   validates :title, presence: true
   validates :course, presence: true
-  validates :school, presence: true
-  validates :condition, presence: true
+  #validates :school, presence: true causes problems because it is select list
+  #validates :condition, presence: true causes problems because it is select list
   validates :asking_price, presence: true, numericality: true
   # Relationships
   belongs_to :school, class_name: "School"

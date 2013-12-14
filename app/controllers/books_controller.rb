@@ -25,17 +25,16 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    if @book.save
-      @book.update_attribute(:isbn, session[:isbn])
+    if @book.save!
       flash[:success] = "You have listed your textbook!"
       redirect_to root_path
     else
-      redirect_to sell2_path
+      redirect_to sell1_path
     end
   end
 
   def new
-    @book = Book.new(isbn: params[:book][:isbn])
+    @book = Book.new
     @isbn = params[:book][:isbn].gsub("-","")
     @google_book = GoogleBooks.search('isbn:' + @isbn)
     @first_book = @google_book.first
@@ -57,6 +56,6 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:school_id, :course, :title, :condition, :asking_price, :email, :img_url)
+      params.require(:book).permit(:school_id, :isbn, :course, :title, :condition, :asking_price, :email, :img_url)
     end
 end

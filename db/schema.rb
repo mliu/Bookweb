@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20131211232159) do
     t.integer  "isbn"
     t.string   "condition"
     t.decimal  "asking_price", precision: 5, scale: 2
-    t.datetime "expiration",                           default: '2013-12-23 04:59:59'
+    t.datetime "expiration",                           default: '2013-12-28 04:59:59'
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "img_url"
