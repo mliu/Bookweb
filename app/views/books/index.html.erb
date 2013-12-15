@@ -52,9 +52,9 @@
             </ul>
           </div>
             
-          <h4>Search Results For <span class="label label-success"><%= params[:search] %></span> at
+          <h3>Search Results For <span class="label label-success"><%= params[:search] %></span> at
             <%= select_tag 'school_id', options_for_select([['Select One', ""], ['Virginia Tech', "Virginia Tech"]], params[:school_id]), :required => true, class: "input-lg" %>
-          </h4>
+          </h3>
         </form>
         </div>
         <div class="col-md-12">
