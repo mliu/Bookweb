@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string   "email"
       t.string   "course"
       t.string   "title"
-      t.integer  "isbn"
+      t.string  "isbn"
       t.string   "condition"
       t.decimal  "asking_price"
       t.datetime "expiration",   default: (Time.now + 1209600).end_of_day
