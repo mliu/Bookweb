@@ -5,9 +5,6 @@
         <div class="col-lg-12">
           <form class="form-horizontal" role="form" method="get" action=<%= books_path %>>
             <div class="well">
-               <div class="text-center">
-           
-              </div>
               <h4>Book Search</h4>
               <div class="col-lg-12">
                 <div class="input-group">
@@ -55,9 +52,9 @@
             </ul>
           </div>
             
-          <h3>Search Results For <span class="label label-success"><%= params[:search] %></span> at
+          <h4>Search Results For <span class="label label-success"><%= params[:search] %></span> at
             <%= select_tag 'school_id', options_for_select([['Select One', ""], ['Virginia Tech', "Virginia Tech"]], params[:school_id]), :required => true, class: "input-lg" %>
-          </h3>
+          </h4>
         </form>
         </div>
         <div class="col-md-12">
