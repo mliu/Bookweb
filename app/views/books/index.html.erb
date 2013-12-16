@@ -84,7 +84,7 @@
                 <% end %>
                 </h4>
                 <div class="img-default">
-                  <a href="" data-toggle="modal" data-target=<%= '#' + book.title + index.to_s%> ><img width="200px" src=<%= book.img_url %> alt=""></a>
+                  <a href="" data-toggle="modal" data-target=<%= '#' + index.to_s%> ><img width="200px" src=<%= book.img_url %> alt=""></a>
                 </div>
                 <div class="caption">
                   <h4 class="pull-right wordwrap">$<%= number_with_precision(book.asking_price, precision: 2) %></h4>
@@ -92,11 +92,11 @@
                   <p class="text-center wordwrap"><%= book.title %></p>
                 </div>
                 <div class="ratings text-center">
-                  <button style="margin-bottom: 5px" class="btn btn-primary" data-toggle="modal" data-target=<%= '#' + book.title + index.to_s%> type="button">Contact Seller</span></button>
+                  <button style="margin-bottom: 5px" class="btn btn-primary" data-toggle="modal" data-target=<%= '#' + index.to_s%> type="button">Contact Seller</span></button>
                 </div>
               </div>
             </div>
-            <div class="modal fade" id=<%= book.title + index.to_s %>>
+            <div class="modal fade" id=<%= index.to_s %>>
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
