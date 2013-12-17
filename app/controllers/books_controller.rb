@@ -40,7 +40,7 @@ class BooksController < ApplicationController
     @google_book = GoogleBooks.search('isbn:' + @isbn)
     @first_book = @google_book.first
     if @first_book.nil? or @first_book.image_link(:zoom => 4).nil?
-      flash[:error] = "No such book exists with ISBN " + @isbn
+      flash[:error] = "Whoops. We can not find a book matching the ISBN " + @isbn
       redirect_to sell1_path
     end
   end
